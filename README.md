@@ -5,4 +5,5 @@ Tasks with Javascripts, Fetch API, AJAX requests and Frameworks
   
  * JSON Objects
  * Promises
+ * Timing functions in JS
  
