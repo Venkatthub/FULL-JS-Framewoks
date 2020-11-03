@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning promises</title>
+</head>
+
+<body>
+    <button id="fade">
+        Fadeout
+    </button>
+
+    <div id="container">
+
+        <p id="firstpara">
+
+            Hey hi this is my first program on making window timeout's
+
+        </p>
+
+    </div>
+
+    <script>
+
+        var pro = function () {
+
+            return new Promise((resolve, reject) => {
+                var div = document.getElementById('firstpara');
+
+                window.setTimeout(() => {
+                    div.removeChild(div.firstChild);
+
+                    if (div.firstChild == null)
+
+                        resolve(div);
+
+                    else
+                        reject(div);
+
+                }, 2000);
+
+
+
+            }
+            )
+        };
+
+        document.getElementById('fade').addEventListener('click', function () {
+            pro().then((div) => div.innerHTML += 'successfull promise').catch((div) => div.innerHTML += 'error - promise rejected')
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>

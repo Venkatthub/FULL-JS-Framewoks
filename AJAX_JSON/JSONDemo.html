@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON - Testing</title>
+</head>
+
+<body>
+
+    <div id="container">
+
+    </div>
+
+    <script>
+
+        var jsonString = JSON.parse(` [
+        {
+            "name": "venkat",
+            "id": 101,
+            "mail": "venkat.bca0@gmail.com"
+        },
+        {
+            "name": "akash",
+            "id": 103,
+            "mail": "akash.srini@anywhere.co"
+        }
+    ]`);
+
+        for (var x in jsonString) {
+
+            document.getElementById('container').innerHTML += jsonString[x].name + " " + jsonString[x].id + " " + jsonString[x].mail + '<br>';
+
+        }
+
+        var javaarray=JSON.stringify(jsonString);
+
+        document.write(javaarray);
+
+        document.write(typeof javaarray);
+        
+    </script>
+</body>
+
+</html>

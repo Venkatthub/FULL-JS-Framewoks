@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time out and call back</title>
+</head>
+
+<body>
+
+    <button id="fade">
+        Fadeout
+    </button>
+
+    <div id="container">
+
+        <p id="firstpara">
+
+            Hey hi this is my first program on making window timeout's
+
+        </p>
+
+    </div>
+    <script>
+
+        document.getElementById('fade').addEventListener('click', start);
+
+        function start() {
+
+            
+            window.setTimeout(fadeOut, 1000);
+            addTo();
+
+        }
+
+
+
+        function fadeOut() {
+
+            var div = document.getElementById('firstpara');
+
+            div.removeChild(div.firstChild);
+        }
+
+        function addTo(){
+
+            document.getElementById('firstpara').innerHTML +='heyhey i go added to you';
+        }
+
+    </script>
+
+</body>
+
+</html>
