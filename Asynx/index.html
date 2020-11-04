@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyn function and await keyword</title>
+</head>
+
+<body>
+
+    <h3 id="header"></h3>
+
+    <form id="formid">
+        Name <input name="myname" required="required" placeholder="enter name" />
+        <input type="submit" value="send" />
+    </form>
+
+    <script>
+
+        document.getElementById('formid').addEventListener('submit', function (event) {
+            event.preventDefault();
+            console.log(this);
+            let formData = new FormData(this);
+
+            console.log(formData.get('myname'));
+
+            putDetails(formData.get('myname')).
+                then((resp) => {
+                    document.getElementById('header').
+
+                    innerText = resp;
+                }
+                ).catch(res => console.log("Error"));
+        });
+
+        async function putDetails(name) {
+
+            let resp = await fetch('myText.txt');
+            let respText = await resp.text();
+
+            return respText;
+
+        }
+    </script>
+</body>
+
+</html>

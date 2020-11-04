@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async and Await keyword</title>
+</head>
+
+<body>
+
+    <h1 id="result"></h1>
+
+    <form id="my-form">
+        <label for="city">City or Pincode</label>
+        <input name="city" type="text" required="required" placeholder="Enter city or pincode" />
+        <input type="submit" value="Search">
+    </form>
+
+    <script>
+
+        document.getElementById('my-form').addEventListener('submit', function (event) {
+
+            event.preventDefault();
+            let formData = new FormData(this);
+            let inputData = formData.get('city');
+            fetchResult(inputData);
+
+        })
+        function fetchResult(city) {
+                        
+            fetch('demo.txt').then((resp)=>resp.text()).then((resp)=>document.getElementById('result').innerText=resp+city);
+
+            fetch('myDetails.json').then((resp)=>resp.json()).then((resp)=>{
+                return JSON.stringify(resp);
+            }).
+            then((x)=>document.getElementById('result').innerText+=' '+x);
+        }
+            
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+
+      "emp": [
+        {
+            "name": "venkat",
+            "id": 101,
+            "mail": "venkat.bca0@gmail.com"
+        },
+        {
+            "name": "akash",
+            "id": 103,
+            "mail": "akash.srini@anywhere.co"
+        }
+    ],
+
+    "name" :"Full Creative",
+
+    "age" :27
+
+}
