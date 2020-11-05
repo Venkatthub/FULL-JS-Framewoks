@@ -7,8 +7,7 @@ Tasks with Javascripts, Fetch API, AJAX requests and Frameworks
  * Promises
  * Timing functions in JS
  
- #Taks
- 
+ # Tasks
  <hr>
  
   * Pincode - A chennai pincode directory using fetch api and JSON
