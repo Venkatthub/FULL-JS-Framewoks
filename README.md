@@ -9,4 +9,8 @@ Tasks with Javascripts, Fetch API, AJAX requests and Frameworks
  # Tasks
  
   * Pincode - A chennai pincode directory using fetch api and JSON
+  
+  * Calculator - A basic arithmetic Javascript calc using Jquery and DOM manipulations
+  
+  ![calc](Calculator/images/calc.jpg)
  
