@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+	<link rel="stylesheet" href="CSS/myStyle.css">
+		<title>Chennai Pincode Directory</title>
+
+</head>
+
+<body>
+
+	<header id="mainHeader">Chennai Pincode Directory</header>
+
+<div id="container">
+	
+	<div id="container-left">
+
+		<input type="text" id="area" placeholder="Enter name or pincode" required="required" />
+		<button id="search" onclick="beginSearch()">GO</button>
+</div>
+		<div id="container-right">
+
+			<Table id="resultTable">
+				<tr>
+					<td id="tableHeader" colspan="2">Search Result</td>
+				</tr>
+				<tr>
+					<td>City</td>
+					<td id="city"></td>
+				</tr>
+				<tr>
+					<td>Pincode</td>
+					<td id="pincode"></td>
+				</tr>
+				<tr>
+					<td>Areas</td>
+					<td id="areas"></td>
+				</tr>
+			</Table>
+
+	</div>
+	
+	</div>
+	
+	<script>
+
+
+		function beginSearch() {
+
+			let area = document.getElementById('area').value;
+
+			console.log(area);
+
+			let urlSearch = new URL("https://chennai-city-pincode-directory.appspot.com");
+
+			urlSearch.pathname = "/directory";
+
+			urlSearch.searchParams.append("area", area);
+
+			console.log(urlSearch);
+
+			//	fetch(urlSearch).then(response => response.text()).then(resp => {
+			//	document.getElementById('result').innerText = resp;
+			//		}).catch(error => console.log(error));
+
+			fetch(urlSearch).then(response => response.json()).then(resp => {
+
+				document.getElementById('city').innerHTML = resp.city;
+				document.getElementById('pincode').innerHTML = resp.code;
+				document.getElementById('areas').innerHTML = resp.areas;
+
+			}).catch(error => console.log(error));
+
+		}
+	</script>
+
+</body>
+
+</html>
