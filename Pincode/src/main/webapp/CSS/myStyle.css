@@ -3,13 +3,12 @@ header {
 }
 
 #mainHeader {
-	background-color: darkblue;
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	background-color: cadetblue;
 	text-align: center;
 	font-size: 50px;
 	color: whitesmoke;
-	border-bottom: 2px;
-	border-bottom: 3px solid #cfcfcf;
+	border-bottom: 5px solid #cfcfcf;
+	font-family:  'Franklin Gothic Medium';
 }
 
 #area {

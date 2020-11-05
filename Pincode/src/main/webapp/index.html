@@ -2,9 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
-	<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-	<link rel="stylesheet" href="CSS/myStyle.css">
-		<title>Chennai Pincode Directory</title>
+<meta http-equiv="content-type"
+	content="application/xhtml+xml; charset=UTF-8" />
+<link rel="stylesheet" href="CSS/myStyle.css">
+<title>Chennai Pincode Directory</title>
 
 </head>
 
@@ -12,13 +13,17 @@
 
 	<header id="mainHeader">Chennai Pincode Directory</header>
 
-<div id="container">
-	
-	<div id="container-left">
+	<button onclick="zoomIn()">+</button>
+	<button onclick="zoomOut()">-</button>
 
-		<input type="text" id="area" placeholder="Enter name or pincode" required="required" />
-		<button id="search" onclick="beginSearch()">GO</button>
-</div>
+	<div id="container">
+
+		<div id="container-left">
+
+			<input type="text" id="area" placeholder="Enter name or pincode"
+				required="required" />
+			<button id="search" onclick="beginSearch()">GO</button>
+		</div>
 		<div id="container-right">
 
 			<Table id="resultTable">
@@ -39,10 +44,10 @@
 				</tr>
 			</Table>
 
+		</div>
+
 	</div>
-	
-	</div>
-	
+
 	<script>
 
 
@@ -73,6 +78,49 @@
 			}).catch(error => console.log(error));
 
 		}
+		
+		
+		var size = 24;
+
+	    function zoomIn() {
+
+	        var element = document.getElementsByTagName("td");
+
+
+	
+		for(var i=0;i<element.length;i++){
+			element[i].style.fontSize = increment();
+		}
+		
+	        
+
+	        function increment() {
+	            let zoomSize = '';
+	            zoomSize = size + 'px';
+	            return zoomSize;
+	        };
+
+	        size += 1;
+
+	    }
+
+	    function zoomOut() {
+
+
+	        var element = document.getElementsByTagName("td");
+	        
+	        for(var i=0;i<element.length;i++){
+			
+	        	element[i].style.fontSize = '24px';
+			
+	        }
+
+	        //element[0].style.fontSize = '16px';
+
+	        size = 24;
+
+	    }
+		
 	</script>
 
 </body>
