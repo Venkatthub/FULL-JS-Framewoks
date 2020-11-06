@@ -19,6 +19,15 @@ import directory.backend.BackendOps;
 public class Directory extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	BackendOps bp;
+
+	@Override
+	public void init() throws ServletException {
+
+		bp = new BackendOps();
+
+	}
+
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -27,8 +36,6 @@ public class Directory extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 
 		String areaName = request.getParameter("area");
-
-		BackendOps bp = new BackendOps();
 
 		bp.computeResults(areaName);
 

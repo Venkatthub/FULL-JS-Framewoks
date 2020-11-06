@@ -4,7 +4,7 @@ import java.util.List;
 
 public class ResultPojo {
 
-	private String city = "Chennai";
+	private final String city = "Chennai";
 	private int code;
 	private List<String> areas;
 

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class BackendOps {
 
-	static ResultPojo resultPojo = new ResultPojo();
+	private static ResultPojo resultPojo = new ResultPojo();
 
 	public void computeResults(String areaToSearch) {
 

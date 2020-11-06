@@ -63,12 +63,6 @@
 
 			urlSearch.searchParams.append("area", area);
 
-			console.log(urlSearch);
-
-			//	fetch(urlSearch).then(response => response.text()).then(resp => {
-			//	document.getElementById('result').innerText = resp;
-			//		}).catch(error => console.log(error));
-
 			fetch(urlSearch).then(response => response.json()).then(resp => {
 
 				document.getElementById('city').innerHTML = resp.city;
@@ -80,15 +74,15 @@
 		}
 		
 		
-		var size = 24;
+		let size = 24;
 
 	    function zoomIn() {
 
-	        var element = document.getElementsByTagName("td");
+	    	let element = document.getElementsByTagName("td");
 
 
 	
-		for(var i=0;i<element.length;i++){
+		for(let i=0;i<element.length;i++){
 			element[i].style.fontSize = increment();
 		}
 		
@@ -107,15 +101,13 @@
 	    function zoomOut() {
 
 
-	        var element = document.getElementsByTagName("td");
+	        let element = document.getElementsByTagName("td");
 	        
-	        for(var i=0;i<element.length;i++){
+	        for(let i=0;i<element.length;i++){
 			
 	        	element[i].style.fontSize = '24px';
 			
 	        }
-
-	        //element[0].style.fontSize = '16px';
 
 	        size = 24;
 
