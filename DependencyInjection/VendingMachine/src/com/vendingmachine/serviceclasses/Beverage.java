@@ -5,4 +5,5 @@ public interface Beverage {
 	String getName();
 
 	double getPrice();
+
 }

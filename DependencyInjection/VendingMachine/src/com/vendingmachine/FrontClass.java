@@ -2,7 +2,7 @@ package com.vendingmachine;
 
 import java.util.Scanner;
 
-import com.vendingmachine.consumers.ServiceConsumer;
+import com.vendingmachine.consumers.Consume;
 import com.vendingmachine.injecters.BeverageInjecter;
 import com.vendingmachine.injecters.CokeInjector;
 import com.vendingmachine.injecters.PepsiInjector;
@@ -22,20 +22,20 @@ public class FrontClass {
 
 	public static void vendingMachine() {
 
-		ServiceConsumer vendingService;
+		Consume vendingService;
 
 		try {
 
 			vendingService = inject.getConsumer();
 
-			System.out.println("You selected " + "\n" + vendingService);
+			System.out.println("\n" + "You selected " + "\n" + vendingService);
 
-			System.out.println("Please select quantity :");
+			System.out.println("\n" + "Please select quantity :");
 
 			vendingService.setQuantity(scan.nextInt());
 
-			System.out.println(
-					"Total amount to be paid :" + vendingService.getTotalAmount() + "\n" + "Please insert coins ");
+			System.out.println("\n" + "Total amount to be paid :" + vendingService.getTotalAmount() + "\n"
+					+ "Please insert coins ");
 
 			while (vendingService.collectCoins(scan.nextDouble())) {
 
@@ -43,7 +43,7 @@ public class FrontClass {
 
 			}
 
-			System.out.println("Please collect your Drink and Bill" + "\n");
+			System.out.println("\n" + "Please collect your Drink and Bill");
 
 			vendingService.printBill();
 
