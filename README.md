@@ -5,6 +5,7 @@ Tasks with Javascripts, Fetch API, AJAX requests and Frameworks
  * JSON Objects
  * Promises
  * Timing functions in JS
+ * Dependency injection - console based program
  
  # Tasks
  
